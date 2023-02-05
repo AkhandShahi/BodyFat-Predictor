@@ -32,6 +32,19 @@ def predict_api():
     print(output)
     return jsonify(output)
 
+@app.route('/predict', methods = ['POST'])
+def predict():
+    print('executing')
+    for i in request.form.values():
+        print(i)
+    data = [float(x) for x in request.form.values()]
+    print(data)
+    final_input = scaler.transform(np.array(data).reshape(1, -1))
+    print(final_input)
+    output = list(regmodel.predict(final_input)[0])
+    print(output[0])
+    return render_template('home.html', prediction_text = 'The body fat is {} %'.format(round(output[0], 2)))
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,12 +1,138 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>BodyFat Predictor</title>
-</head>
-<body>
-    <h1>
-Jai Shree Ram
-    </h1>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BodyFat-Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+
+        <nav class="navbar " >
+  <div class="container-fluid" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">
+     <b>BodyFat-Predictor</b>
+    </a>
+  </div>
+        </nav>
+
+
+
+        <br>
+        <br>
+<div class = 'container'>
+
+    <form class="row g-3 " action = "{{ url_for ('predict')}}" method = "post">
+        <!--
+        input type = "text" name = "Age" required/> <br>
+        <input type = "text" name = "Weight" required/> <br>
+        <input type = "text" name = "Neck" required/> <br>
+        <input type = "text" name = "Chest" required/> <br>
+        <input type = "text" name = "Abdomen" required/> <br>
+        <input type = "text" name = "Hip" required/> <br>
+        <input type = "text" name = "Thigh" required/> <br>
+        <input type = "text" name = "Knee" required/> <br>
+        <input type = "text" name = "Ankle" required/> <br>
+        <input type = "text" name = "Biceps" required/> <br>
+        <input type = "text" name = "Forearm" required/> <br>
+        <input type = "text" name = "Wrist" required/> <br>
+         -->
+
+  <div class="col-md-4">
+      <label class="form-label"><b>Age</b>(in yrs)</label>
+    <input type="text" class="form-control" name = "Age"  required>
+     </div>
+
+  <div class="col-md-4">
+    <label class="form-label"><b>Weight</b>(in lbs)</label>
+    <input type="text" class="form-control" name = "Weight" required>
+    </div>
+          <div class="col-md-4">
+    <label class="form-label"><b>Neck</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Neck"  required>
+     </div>
+
+                <br>
+
+
+  <div class="col-md-4">
+    <label class="form-label"><b>Chest</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Chest" required>
+    </div>
+
+
+  <div class="col-md-4">
+    <label class="form-label"><b>Abdomen</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Abdomen"  required>
+     </div>
+
+  <div class="col-md-4">
+    <label class="form-label"><b>Hip</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Hip" required>
+    </div>
+                <br>
+
+   <div class="col-md-4">
+    <label class="form-label"><b>Thigh</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Thigh"  required>
+     </div>
+
+  <div class="col-md-4">
+    <label class="form-label"><b>Knee</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Knee" required>
+    </div>
+
+
+  <div class="col-md-4">
+    <label class="form-label"><b>Ankle</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Ankle"  required>
+     </div>
+
+         <br>
+
+  <div class="col-md-4">
+    <label class="form-label"><b>Biceps</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Biceps" required>
+    </div>
+
+  <div class="col-md-4">
+    <label class="form-label"><b>Forearm</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Forearm"  required>
+     </div>
+
+  <div class="col-md-4">
+    <label class="form-label"><b>Wrist</b>(in cm)</label>
+    <input type="text" class="form-control" name = "Wrist" required>
+    </div>
+
+        <br>
+
+    <button type = 'submit' class = 'btn btn-success '>Predict BodyFat</button>
+                &nbsp;
+    <button type = 'reset' class = 'btn btn-secondary '>Reset Values</button>
+
+    </form>
+
+  <br>
+    <div class = 'output' style= "text-align:center" >
+        <h3 style = 'color:teal'> {{prediction_text}} </h3>
+    </div>
+
+</div>
+
+
+<br><br>
+
+<footer class="page-footer font-small blue">
+
+
+  <div class="footer-copyright text-center py-3" style="background-color: #e3f2fd;">
+      © 2023 Copyright: Akhand Shahi
+  </div>
+
+
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
 </html>
